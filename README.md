@@ -23,7 +23,7 @@ This is a graphical user interface (GUI) application built using `PyQt5` in Pyth
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/your-repo/file-operations-app.git
+   git clone https://github.com/gojira69/FileWiz.git
    cd file-operations-app
    ```
 

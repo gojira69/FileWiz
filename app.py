@@ -27,7 +27,7 @@ class Window(QMainWindow):
     def init_ui(self):
         self.setGeometry(50, 50, 400, 300)
         self.setWindowTitle("File Operations")
-        self.setWindowIcon(QIcon("logo.jpeg"))
+        self.setWindowIcon(QIcon("logo.jpg"))
 
         centralWidget = QWidget(self)
         mainLayout = QVBoxLayout(centralWidget)
