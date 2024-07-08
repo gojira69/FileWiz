@@ -71,7 +71,6 @@ class Window(QMainWindow):
 
     def onRadioButtonClicked(self, button):
         selectedOperation = button.text()
-        print(f"Selected operation: {selectedOperation}")
         self.selected_operation_label.setText(
             f"Selected Operation: {selectedOperation}"
         )
@@ -136,25 +135,14 @@ class Window(QMainWindow):
     # The core functions for file operations
 
     def compressFiles(self, filePaths, outputFileName):
-        if not filePaths:
-            print("Please provide a list of files to compress.")
-            return
-
-        if not outputFileName:
-            print("Please provide an output file name for the compressed files.")
-            return
 
         outputFileName += ".zip"
         with zipfile.ZipFile(outputFileName, "w", zipfile.ZIP_DEFLATED) as zipf:
             for file in filePaths:
                 zipf.write(file, arcname=file.split("/")[-1])
 
-        print(f"Files compressed successfully to {outputFileName}")
 
     def textToPDF(self, fileName):
-        if not fileName:
-            print("Please provide a file name.")
-            return
 
         pdf = FPDF()
         pdf.add_page()
@@ -178,16 +166,8 @@ class Window(QMainWindow):
 
         fileName = fileName.split(".")[0] + ".pdf"
         pdf.output(fileName)
-        print(f"PDF file '{fileName}' created successfully.")
 
     def mergePDFs(self, pdfFiles, outputFileName):
-        if not pdfFiles:
-            print("Please provide a list of PDF files.")
-            return
-
-        if not outputFileName:
-            print("Please provide an output file name.")
-            return
 
         merger = PyPDF2.PdfMerger()
         for pdf in pdfFiles:
@@ -196,27 +176,15 @@ class Window(QMainWindow):
         outputFileName = outputFileName + ".pdf"
         merger.write(outputFileName)
         merger.close()
-        print(f"PDF files merged successfully to {outputFileName}")
 
     def imgToPDF(self, imgFiles, outputFileName):
-        if not imgFiles:
-            print("Please provide a list of image files.")
-            return
-
-        if not outputFileName:
-            print("Please provide an output file name.")
-            return
 
         outputFileName = outputFileName + ".pdf"
         imgs = [Image.open(img).convert("RGB") for img in imgFiles]
         imgs[0].save(outputFileName, save_all=True, append_images=imgs[1:])
 
-        print(f"Images converted to PDF: {outputFileName}")
 
     def encryptPDF(self, fileName, pwd):
-        if not fileName:
-            print("Please provide a PDF file name.")
-            return
 
         with open(fileName, "rb") as file:
             reader = PyPDF2.PdfReader(file)
@@ -230,10 +198,6 @@ class Window(QMainWindow):
 
             with open(output_file, "wb") as output_file:
                 writer.write(output_file)
-
-            print(
-                f"PDF file '{fileName}' encrypted successfully and saved as {output_file}."
-            )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+PyQt5
+fpdf
+Pillow
+PyPDF2
+pyinstaller

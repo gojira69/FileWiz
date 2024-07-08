@@ -24,7 +24,7 @@ This is a graphical user interface (GUI) application built using `PyQt5` in Pyth
 
    ```sh
    git clone https://github.com/gojira69/FileWiz.git
-   cd file-operations-app
+   cd FileWiz
    ```
 
 2. **Create a virtual environment (optional but recommended):**
@@ -37,10 +37,12 @@ This is a graphical user interface (GUI) application built using `PyQt5` in Pyth
 3. **Install the required packages:**
 
    ```sh
-   pip install PyQt5 fpdf pillow PyPDF2
+   pip install -r requirements.txt
    ```
 
 ## Usage
+
+### Running from Source
 
 1. **Run the application:**
 
@@ -60,3 +62,12 @@ This is a graphical user interface (GUI) application built using `PyQt5` in Pyth
    - **Convert Images to PDF:** Select `images` to convert into a `single PDF file`.
    - **Merge Multiple PDFs:** Choose `multiple PDF files` to merge into a `single PDF`.
    - **Convert Text File to PDF:** Select a `text file` to convert it into a `PDF document`.
+
+### Running Executables
+
+For convenience, there are pre-built executables available:
+
+- **Windows Users:** Navigate to the `Windows` directory and run the executable file.
+- **Linux Users:** Navigate to the `Linux` directory and run the executable file.
+
+This allows you to use the application without needing to install Python and the required packages.
