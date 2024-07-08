@@ -1,4 +1,4 @@
-# File Operations Application
+# FileWiz
 
 This is a graphical user interface (GUI) application built using `PyQt5` in Python. It allows users to perform various file operations conveniently through a user-friendly interface.
 
